@@ -4,9 +4,9 @@
 
 ---
 
-### What are some differences between interfaces and types in TypeScript?
+### 1.What are some differences between interfaces and types in TypeScript?
 
-## **_Answer:_**
+**_Answer:_**
 
 ## What is the use of the keyof keyword in TypeScript? Provide an example.
 
