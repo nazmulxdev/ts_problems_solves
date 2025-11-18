@@ -147,10 +147,21 @@ function calculateTotalPrice(
     ): number => {
       if (curr.discount !== undefined) {
         if (curr.discount < 0 || curr.discount > 100) {
-          throw new Error(`Invalid Discount: ${curr.discount}. Must be 0-100.`);
+          throw new Error(
+            `Invalid Discount: ${curr.discount}. Percentage must be between 0-100.`,
+          );
         }
       }
-
+      if (curr.price < 0) {
+        throw new Error(
+          `Invalid Price: ${curr.price}. Price can not be a negative value.`,
+        );
+      }
+      if (curr.quantity < 0) {
+        throw new Error(
+          `Invalid Quantity: ${curr.quantity}. Quantity can not be a negative value.`,
+        );
+      }
       const totalPrice: number = curr.price * curr.quantity;
       let totalDiscount: number = 0;
       if (curr.discount !== undefined) {
